@@ -10,7 +10,7 @@ from enum import Enum
 
 import importlib_metadata as metadata
 import pkg_resources
-from pytest import yield_fixture
+import pytest
 
 from pytest_shutil.workspace import Workspace
 from pytest_shutil import run, cmdline
@@ -33,7 +33,7 @@ CONFIG = FixtureConfig(
 )
 
 
-@yield_fixture(scope='function')
+@pytest.fixture()
 @yield_requires_config(CONFIG, ['virtualenv_executable'])
 def virtualenv():
     """ Function-scoped virtualenv in a temporary workspace.

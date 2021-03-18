@@ -7,7 +7,7 @@ import pytest
 from pytest_virtualenv import VirtualEnv
 
 
-@pytest.yield_fixture(scope="session")
+@pytest.fixture(scope="session")
 def virtualenv():
     with VirtualEnv() as venv:
         test_dir = resource_filename("pytest_profiling", "tests/integration/profile")

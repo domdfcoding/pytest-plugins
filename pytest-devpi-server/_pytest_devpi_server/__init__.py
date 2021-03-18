@@ -10,7 +10,7 @@ import logging
 from six.moves import cStringIO
 
 import pkg_resources
-from pytest import yield_fixture, fixture
+import pytest
 import devpi_server as _devpi_server
 from devpi.main import main as devpi_client
 from pytest_server_fixtures.http import HTTPTestServer
@@ -18,7 +18,7 @@ from pytest_server_fixtures.http import HTTPTestServer
 log = logging.getLogger(__name__)
 
 
-@yield_fixture(scope='session')
+@pytest.fixture(scope='session')
 def devpi_server(request):
     """ Session-scoped Devpi server run in a subprocess, out of a temp dir. 
         Out-of-the-box it creates a single user an index for that user, then
@@ -49,7 +49,7 @@ def devpi_server(request):
         yield server
 
 
-@fixture
+@pytest.fixture()
 def devpi_function_index(request, devpi_server):
     """ Creates and activates an index for your current test function. 
     """
