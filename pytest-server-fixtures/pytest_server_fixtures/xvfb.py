@@ -13,7 +13,7 @@ from pytest_fixture_config import yield_requires_config
 from pytest_server_fixtures import CONFIG
 
 
-@pytest.yield_fixture(scope='function')
+@pytest.fixture()
 @yield_requires_config(CONFIG, ['xvfb_executable'])
 def xvfb_server():
     """ Function-scoped Xvfb (X-Windows Virtual Frame Buffer) in a local thread.
@@ -23,7 +23,7 @@ def xvfb_server():
     test_server.close()
 
 
-@pytest.yield_fixture(scope='session')
+@pytest.fixture(scope='session')
 @yield_requires_config(CONFIG, ['xvfb_executable'])
 def xvfb_server_sess():
     """ Session-scoped Xvfb (X-Windows Virtual Frame Buffer) in a local thread.
@@ -31,7 +31,6 @@ def xvfb_server_sess():
     test_server = XvfbServer()
     yield test_server
     test_server.close()
-
 
 
 # TODO: make this a TestServer, clean up print statements for proper logging

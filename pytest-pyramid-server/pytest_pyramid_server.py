@@ -18,7 +18,7 @@ except ImportError:
 
 from wsgiref.simple_server import make_server
 from paste.deploy.loadwsgi import loadapp
-from pytest import yield_fixture
+import pytest
 
 from pytest_server_fixtures.http import HTTPTestServer
 
@@ -27,7 +27,7 @@ class ConfigNotFoundError(Exception):
     """Raised when a given config file and path is not found."""
 
 
-@yield_fixture(scope='session')
+@pytest.fixture(scope='session')
 def pyramid_server(request):
     """ Session-scoped Pyramid server run in a subprocess, out of a temp dir. 
         This is a 'real' server that you can point a Selenium webdriver at.

@@ -4,7 +4,7 @@ import os
 import sys
 from distutils import sysconfig
 
-from pytest import yield_fixture
+import pytest
 from pkg_resources import working_set
 try:
     from path import Path
@@ -28,7 +28,7 @@ CONFIG = FixtureConfig(
 )
 
 
-@yield_fixture(scope='function')
+@pytest.fixture()
 @yield_requires_config(CONFIG, ['virtualenv_executable'])
 def virtualenv():
     """ Function-scoped virtualenv in a temporary workspace.
