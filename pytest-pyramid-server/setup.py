@@ -48,7 +48,7 @@ if __name__ == '__main__':
         author_email='eeaston@gmail.com',
         classifiers=classifiers,
         install_requires=install_requires,
-        tests_require=tests_require,
+        # tests_require=tests_require,
         py_modules=['pytest_pyramid_server', 'pyramid_server_test'],
         entry_points=entry_points,
     ))

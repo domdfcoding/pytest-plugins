@@ -41,7 +41,7 @@ if __name__ == '__main__':
         author_email='ed@catmur.co.uk',
         classifiers=classifiers,
         install_requires=install_requires,
-        tests_require=tests_require,
+        # tests_require=tests_require,
         py_modules=['pytest_profiling'],
         entry_points=entry_points,
     ))

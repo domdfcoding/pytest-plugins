@@ -40,7 +40,7 @@ if __name__ == '__main__':
         author_email='drtimcouper@gmail.com',
         classifiers=classifiers,
         install_requires=install_requires,
-        tests_require=tests_require,
+        # tests_require=tests_require,
         packages=find_packages(exclude='tests'),
         entry_points=entry_points,
     ))

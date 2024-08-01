@@ -66,7 +66,7 @@ if __name__ == '__main__':
         classifiers=classifiers,
         install_requires=install_requires,
         extras_require=extras_require,
-        tests_require=tests_require,
+        # tests_require=tests_require,
         packages=find_packages(exclude='tests'),
         entry_points=entry_points,
     ))
